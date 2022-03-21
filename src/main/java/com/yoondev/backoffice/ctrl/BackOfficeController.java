@@ -1,6 +1,7 @@
 package com.yoondev.backoffice.ctrl;
 
 import com.yoondev.backoffice.service.BackOfficeService;
+import com.yoondev.backoffice.utils.OMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ public class BackOfficeController {
 
     @RequestMapping("/")
     public String mainIndex(Model model){
-        List<HashMap<String, Object>> boardList = backOfficeService.selectBoardList();
+        List<OMap> boardList = backOfficeService.selectBoardList();
 
         model.addAttribute("boardList", boardList);
         return "/management/board";
