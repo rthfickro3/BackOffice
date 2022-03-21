@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="asideFragment">
+        <div id="aside">
+            <h4 class="sideTitle">BACK OFFICE</h4>
+
+            <ul class="sideMenu">
+                <li class="depth1">
+                    <a href="javascript:menuClick('menu1')" id="menu1" class="depth1_a">콘텐츠관리</a>
+                    <ul>
+                        <li class="depth2"><a href="#">ㆍ게시글목록</a></li>
+                        <li class="depth2"><a href="#">ㆍ페이징관리</a></li>
+                    </ul>
+                </li>
+                <li class="depth1">
+                    <a href="javascript:menuClick('menu2')" id="menu2" class="depth1_a">운영관리</a>
+                    <ul>
+                        <li class="depth2"><a href="#">ㆍ회원관리</a></li>
+                        <li class="depth2"><a href="#">ㆍ탈퇴회원관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </th:block>
+</html>

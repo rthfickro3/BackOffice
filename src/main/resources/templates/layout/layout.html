@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="">
+    <th:block th:replace="fragments/header::headerFragment"></th:block>
+
+    <body>
+        <div class="container layout">
+            <th:block th:replace="fragments/aside::asideFragment"></th:block>
+            <div id="main">
+                <th:block th:replace="fragments/topper::topperFragment"></th:block>
+                <th:block layout:fragment="content"></th:block>
+            </div>
+        </div>
+    </body>
+</html>
