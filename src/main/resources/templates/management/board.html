@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}" lang="">
+
     <th:block layout:fragment="content">
          <div class="content">
              <table class="table table-striped table-bordered table-hover" id="pagingTable">
@@ -22,11 +23,13 @@
                     <tr th:each="list : ${boardList}">
                         <td th:text="${list.idx}"></td>
                         <td th:text="${list.subject}"></td>
-                        <td th:text="${list.content}"></td>
+                        <td th:text="${list.writer}"></td>
                         <td th:text="${list.regdate}"></td>
                     </tr>
                  </tbody>
              </table>
+
+             <div class="paging" th:utext="${paging}"></div>
          </div>
     </th:block>
 </html>
