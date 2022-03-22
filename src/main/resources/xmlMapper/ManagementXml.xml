@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yoondev.backoffice.mapper.ManagementMapper">
+    <select id="selectBoardListCount" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM b_board
+    </select>
+
+    <select id="selectBoardList" parameterType="com.yoondev.backoffice.utils.OMap" resultType="com.yoondev.backoffice.utils.OMap">
+        SELECT *
+        FROM b_board
+        LIMIT #{startLimit}, #{endLimit}
+    </select>
+</mapper>
