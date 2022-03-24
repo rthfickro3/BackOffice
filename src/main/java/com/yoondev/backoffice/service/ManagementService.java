@@ -18,13 +18,12 @@ public class ManagementService {
     public Boolean selectBoardList(Model model, HttpServletRequest req, OMap reqParam) {
         OMap dbParams = new OMap();
         int showContentSize = 10;
-
         int movePage = reqParam.getInt("page", 1);
-        dbParams.put("startLimit", showContentSize * (movePage - 1));
-        dbParams.put("endLimit", showContentSize);
 
         int boardListCnt = managementRepository.selectBoardListCount();
 
+        dbParams.put("startLimit", showContentSize * (movePage - 1));
+        dbParams.put("endLimit", showContentSize);
         List<OMap> boardList = managementRepository.selectBoardList(dbParams);
 
         Paging pg = new Paging(showContentSize, boardListCnt, movePage, 8, req.getRequestURI());
