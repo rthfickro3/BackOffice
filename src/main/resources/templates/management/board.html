@@ -20,11 +20,14 @@
                     </tr>
                  </thead>
                  <tbody>
-                    <tr th:each="list : ${boardList}">
+                    <tr th:if="${!#maps.isEmpty(boardList)}" th:each="list : ${boardList}">
                         <td th:text="${list.idx}"></td>
                         <td th:text="${list.subject}"></td>
                         <td th:text="${list.writer}"></td>
                         <td th:text="${list.regdate}"></td>
+                    </tr>
+                    <tr th:unless="${!#maps.isEmpty(boardList)}">
+                        <td colspan="4" style="text-align : center;">No Contents Data!</td>
                     </tr>
                  </tbody>
              </table>
