@@ -8,9 +8,15 @@
         FROM b_board
     </select>
 
-    <select id="selectBoardList" parameterType="com.yoondev.backoffice.utils.OMap" resultType="com.yoondev.backoffice.utils.OMap">
+    <select id="selectBoardList" parameterType="OMap" resultType="OMap">
         SELECT *
         FROM b_board
         LIMIT #{startLimit}, #{endLimit}
     </select>
+
+    <update id="updateBoardData" parameterType="OMap">
+        UPDATE b_board
+        SET subject = #{subject}
+        WHERE idx = #{idx}
+    </update>
 </mapper>
